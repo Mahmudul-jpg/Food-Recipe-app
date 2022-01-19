@@ -1,0 +1,14 @@
+.jumbotron{
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0.8)),url("./pic.png");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+    height:500px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+.button-input{
+    width:70%;
+}
