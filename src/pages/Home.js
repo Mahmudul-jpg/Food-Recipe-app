@@ -1,16 +1,16 @@
 import React from 'react';
 import Jumbotron from '../components/jumbotron/Jumbotron'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import axios from 'axios'
 import Food from '../components/foodContainer/Food'
+import { MyContext } from '../Context'
 function Home() {
-    const [meals, setMeals] = useState([])
+    const { meals, setMeals } = useContext(MyContext)
     useEffect(() => {
         axios.get("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
-            // .then(res => res.json())
             .then(({ data }) => setMeals(data.meals))
             .catch((error) => console.log(error))
-    }, [])
+    })
     return (<div>
         <Jumbotron />
         <Food meals={meals} />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap'
-function FoodCard({ strMeal, strMealThumb }) {
+import MealModal from '../MealModal/MealModal'
+function FoodCard({ strMeal, strMealThumb, strInstructions }) {
     return (<Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={strMealThumb} />
         <Card.Body>
@@ -9,7 +10,8 @@ function FoodCard({ strMeal, strMealThumb }) {
                 Some quick example text to build on the card title and make up the bulk of
                 the card's content.
             </Card.Text> */}
-            <Button variant="primary">See more...</Button>
+            <MealModal title={strMeal} desc={strInstructions} />
+            {/* <Button variant="primary">See more...</Button> */}
         </Card.Body>
     </Card>);
 }
